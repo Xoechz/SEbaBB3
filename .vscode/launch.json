@@ -5,13 +5,33 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "C++ Run",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "cd ${fileDirname}/bin && ./${fileBasenameNoExtension}",
+            "terminalName": "C++ Execution",
+            "terminalIndex": -1,
+            "showTerminal": true,
+            "preLaunchTask": "G++ Build"
+        },
+        {
+            "name": "C Run",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "cd ${fileDirname}/bin && ./${fileBasenameNoExtension}",
+            "terminalName": "C Execution",
+            "terminalIndex": -1,
+            "showTerminal": true,
+            "preLaunchTask": "GCC Build"
+        },
+        {
             "name": "C++ Debug Launch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${fileDirname}/bin",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
@@ -37,7 +57,7 @@
             "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${fileDirname}/bin",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
