@@ -15,3 +15,7 @@ Nicht mehr wie 3 Mitarbeiter pro Aufgabe.
 Git ist entstanden da man für frühere Version Management Systeme immer eine Internetverbindung brauchte.
 
 Für Hersteller sind Messen in ihrer Branche oft entscheidend
+
+### Git
+
+Folien übersichltich.
