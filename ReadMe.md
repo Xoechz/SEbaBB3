@@ -7,3 +7,5 @@
 ## [Datenbanken](/Notes/Datenbanken.md)
 
 ## [Netzwerktechnik](/Notes/Netzwerktechnik.md)
+
+## [Mathe](/Notes/Mathe.md)
