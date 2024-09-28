@@ -6,8 +6,14 @@
             "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
-                "-g",
                 "${file}",
+                "${fileDirname}/lib/*.cpp",
+                "-g",
+                "-Og",
+                "-pedantic",
+                "-Wall",
+                "-Wextra",
+                "-std=c90",
                 "-o",
                 "${fileDirname}/bin/${fileBasenameNoExtension}"
             ],
@@ -30,6 +36,11 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "${fileDirname}/lib/*.c",
+                "-Og",
+                "-pedantic",
+                "-Wall",
+                "-Wextra",
                 "-o",
                 "${fileDirname}/bin/${fileBasenameNoExtension}"
             ],
@@ -42,7 +53,8 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "detail": "compiler: gcc"
         }
     ],
     "version": "2.0.0"

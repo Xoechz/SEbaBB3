@@ -25,6 +25,22 @@
             "preLaunchTask": "GCC Build"
         },
         {
+            "name": "C Build",
+            "type": "f5anything",
+            "showTerminal": false,
+            "preLaunchTask": "GCC Build",
+            "request": "launch",
+            "command": "echo Building C"
+        },
+        {
+            "name": "C++ Build",
+            "type": "f5anything",
+            "showTerminal": false,
+            "preLaunchTask": "G++ Build",
+            "request": "launch",
+            "command": "echo Building C++"
+        },
+        {
             "name": "C++ Debug Launch",
             "type": "cppdbg",
             "request": "launch",
