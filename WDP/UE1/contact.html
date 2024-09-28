@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Blog: Contact</title>
+    <link rel="icon" type="image/png" href="images/logo-de.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" lang="en">
+
+</head>
+
+<body>
+    <header style="background-color: black;">
+        <h1 style="color: white;">Contact</h1>
+        <nav style="background-color: gray;">
+            <a href="index.html">Home</a>
+            <a href="create.html">Create Entry</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <h2>Contact Form</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email">
+        <br>
+        <label for="IBAN">IBAN:</label>
+        <input type="text" id="IBAN" placeholder="IBAN">
+        <br>
+        <label for="BIC">BIC:</label>
+        <input type="text" id="BIC" placeholder="BIC">
+        <br>
+        <label for="creditCard">Credit Card Number:</label>
+        <input type="text" id="creditCard" placeholder="Credit Card Number">
+        <br>
+        <label for="securityCode">Security Code:</label>
+        <input type="password" id="securityCode" placeholder="Security Code">
+        <br>
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="date" id="expiryDate">
+        <br>
+        <label for="Agree">I agree to sell my soul</label>
+        <input type="checkbox" id="Agree">
+        <br>
+        <label>Which afterlife to you prefer?</label>
+        <input type="radio" id="Nirvana" name="afterlife" value="Nirvana">
+        <label for="nirvana">Nirvana</label>
+        <input type="radio" id="heaven" name="afterlife" value="heaven">
+        <label for="heaven">Heaven</label>
+        <input type="radio" id="Void" name="afterlife" value="Void">
+        <label for="Void">Void</label>
+        <input type="radio" id="hell" name="afterlife" value="hell">
+        <label for="hell">Hell</label>
+        <br>
+        <label for="rating">Rate your experience:</label>
+        <input type="range" id="rating" min="0" max="73">
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" placeholder="Message"></textarea>
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <footer>
+        &copy; My Blog
+    </footer>
+</body>
+
+</html>

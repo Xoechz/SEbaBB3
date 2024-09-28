@@ -1,0 +1,17 @@
+.blogEntry {
+    border: 1px dashed black;
+    padding: 30px;
+    margin: 30px;
+}
+
+.blogEntry:hover {
+    background-color: #f0f0f0;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 5px;
+    border-collapse: collapse;
+}
