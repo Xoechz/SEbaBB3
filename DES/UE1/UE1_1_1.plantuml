@@ -1,0 +1,55 @@
+@startuml UE1_1_1
+
+hide circle
+
+class Kunde{
+    <<PK>> Kundennummer: number
+    Name: string
+}
+
+class Bestellung{
+    <<PK>> Bestellnummer: number
+    Kundennummer: number
+}
+
+class Bestellposition{
+    <<PK>> Bestellnummer: number
+    <<PK>> BestellPositionsNummer: number
+    Lieferdatum: date
+    Artikelnummer: number
+    Anzahl: number
+}
+note right
+Bestellpositionen derselben Bestellung können
+an unterschiedlichen Tagen geliefert werden
+end note
+
+class Artikel{
+    <<PK>> Artikelnummer: number
+    Bezeichnung: string
+    Beschreibung: string
+}
+note right
+Als Artikel werden bestimmte Verkaufsartikel bezeichnet.
+Dies entspricht nicht dem Inventar(d.h. mit Inventarnummer
+verwaltete Artikel, die physisch vorliegen müssen).
+Diese sollen über ein eigenes System verwaltet werden.
+end note
+
+Kunde "1" -down- "0..*" Bestellung : bekommt >
+Bestellung "1" *-down- "1..*" Bestellposition : hat >
+Bestellposition "0..*" -down- "1" Artikel : bezieht sich auf >
+
+note as n1 #red
+Die Multiplizitäten wurden korrigiert, 
+da ein Kunde mehrere Bestellungen haben 
+kann, aber eine Bestellung nur einem Kunden 
+zugeordnet ist und da Artikel in mehreren 
+Bestellpositionen vorkommen können.
+
+Die Bestellposition wurde als Komposition
+modelliert, da sie ohne Bestellung nicht
+existieren kann.
+end note
+
+@enduml

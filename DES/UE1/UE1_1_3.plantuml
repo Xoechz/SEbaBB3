@@ -1,0 +1,44 @@
+@startuml UE1_1_3
+
+hide circle
+
+class Betrieb{
+    <<PK>> Firmenbuchnummer: string
+    Name: string
+}
+
+class Person{
+    <<PK>> SVNr: string
+    Name: string
+}
+
+class Anstellung
+{
+    <<PK>> Personalnummer: int
+    Einstellungsdatum: date
+    Austrittsdatum: date
+}
+
+Betrieb "1" *-down- "0..*" Anstellung : hat >
+Anstellung "0..*" -down- "1" Person : ist angestellt bei >
+
+note as n1 #red
+Die Klassennamen wurden singularisiert
+und Datentypen von Attributen wurden
+angepasst.
+
+Die Sozialversicherungsnummer wurde als
+Primärschlüssel gewählt, da sie eindeutig
+ist.
+
+Annahme: Eine Person kann bei einem
+Betrieb austreten und wieder eintreten,
+dabei wird ein zweiter Eintrag mit
+Einstellungsdatum und Austrittsdatum
+angelegt.
+
+Daher wurde eine Klasse zwischen Person
+und Betrieb eingefügt.
+end note
+
+@enduml

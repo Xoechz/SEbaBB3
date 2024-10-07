@@ -1,0 +1,81 @@
+@startuml UE1_2
+
+hide circle
+
+class Rating {
+    Rating: int
+}
+
+abstract class CommentableEntity{
+    <<PK>> EntityId: int
+    CreateDate: date
+}
+
+together{
+    class Comment{
+        Content: string
+    }
+
+    class Course{
+        Title: string
+        Description: string
+    }
+
+    class Solution{
+        FilePath: string
+        Text: string
+    }
+
+    class Assingment{
+        FilePath: string
+        Date: date
+        IsLectureExam: bool
+    }
+
+    class Teacher{
+        Name: string
+        Department: string
+    }
+}
+
+class SemesterCourse{
+    <<PK>> Semester: string
+}
+
+class Grade{
+    Grade: int
+}
+
+class User{
+    <<PK>> UserId: int
+    <<Unique>> Nickname: string
+}
+note right: Für anonyme Eingaben wird der Dummy-User "Anon" genutzt.
+
+Circle c1
+
+c1 -up-|> CommentableEntity :{complete, disjoint}
+
+Comment -up- c1
+Course -up- c1
+Solution -up- c1
+Assingment -up- c1
+Teacher -up- c1
+
+CommentableEntity "0..*" -down- "0..*" User : rates <
+(User, CommentableEntity) .. Rating
+User "1" -up- "0..*" Comment : writes >
+Comment "0..*" -up- "1" CommentableEntity : replies to >
+
+SemesterCourse "0..*" -up-* "1" Course : instance of >
+Teacher "1..*" -- "0..*" SemesterCourse : teaches >
+
+Assingment "0..*" -down-* "1" SemesterCourse : part of >
+
+User "1" *-up- "0..*" Grade : uploads >
+User "1" *-up- "0..*" Solution : uploads >
+
+Grade "0..*" -up-* "1" Assingment : has <
+Solution "0..*" -right-* "1" Assingment : has <
+
+@enduml

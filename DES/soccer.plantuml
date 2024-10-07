@@ -1,0 +1,31 @@
+@startuml soccer
+
+hide circle
+hide methods
+
+class Player{
+    <<PK>> PlayerId: int
+    Firstname: string
+    Lastname: string
+    DateOfBirth: date
+}
+
+class Coach
+
+class Team
+
+class League
+
+class Game
+
+Player "20..*" -right-o "0..1" Team : plays for >
+Coach "3..*" -down- "1" Team : trains >
+Team "9..18" -down-* "1" League : belongs to >
+
+<> diamond1
+Game "0..*" -down- diamond1 
+diamond1 -left- "2" Team : plays <
+diamond1 -down- "1" League : contains <
+
+
+@enduml

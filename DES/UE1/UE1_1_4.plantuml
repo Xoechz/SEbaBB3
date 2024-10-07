@@ -1,0 +1,47 @@
+@startuml UE1_1_4
+
+hide circle
+
+class Student{
+    <<PK>> Matrikelnummer: number
+}
+
+class Person{
+    <<PK>> Name: string
+    Geburtsdatum: date
+}
+
+class Tutor{
+}
+
+class Uebungsgruppe{
+    <<PK>> Kuerzel: string
+    Tutorenvertrag: bool
+    Tutor: name
+}
+note right
+Die meisten Übungsgruppen werden von einer Tutorin betreut.
+Diese ist häufig eine Studentin.
+Eine Tutorin kann die Betreuung mehrerer Übungsgruppen übernehmen.
+end note
+
+Tutor "0..1" *-down- "0..*" Uebungsgruppe : betreut >
+Student "1" -down- "0..*" Uebungsgruppe : gehört zu >
+
+Tutor -up-|> Person
+Student -up-|> Person: {incomplete, overlapping}
+
+note as n1 #red
+Der Name wurde als Primärschlüssel
+behalten, obwohl dies nicht ideal ist.
+
+Der Tutor ist jetzt eine eigene abgeleitete
+Klasse die mit der Klasse Student überlappen
+kann.
+
+Eine Übungsgruppe ist keine Komposition.
+
+Das Geburtsdatum wurde zur Person verlagert.
+end note
+
+@enduml

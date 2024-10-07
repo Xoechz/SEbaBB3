@@ -1,0 +1,44 @@
+@startuml Nationalrat
+
+hide circle
+hide methods
+
+class Abgeordnete
+{
+    <<PK>> Nummer: int
+    Name: string
+    MailAdresse: string
+}
+
+class Regionalwahlkreis
+{
+    <<PK>> Kurzbezeichnung: string
+    Name: string
+    Mandate: int
+}
+
+class Bezirk
+{
+    <<PK>> Name: int
+    Bundesland: string
+}
+
+class Wahlpartei
+{
+    <<PK>> Name: string
+    Anschrift: string
+}
+
+class Parlamentsklub
+{
+    <<PK>> Name: string
+    Gründungsdatum: date
+}
+
+Abgeordnete "1..*" -left- "1" Regionalwahlkreis : vertritt >
+Regionalwahlkreis "1" *-down- "1..*" Bezirk : besteht aus >
+Abgeordnete "1..*" -down- "0..1" Wahlpartei : ist Mitglied von >
+Abgeordnete "5..*" -up- "0..1" Parlamentsklub : ist Mitglied von >
+Abgeordnete "1" -up- "0..1" Parlamentsklub : ist Klubvorsitz von >
+
+@enduml

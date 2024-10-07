@@ -1,0 +1,94 @@
+@startuml UE1_3
+
+hide circles
+
+class Getränk{
+    <<PK>> Name: string
+    <<PK>> Größe: float
+    Preis: float
+    Vorrat: int
+}
+note right: Größe in Liter
+
+
+class Speise{
+    <<PK>> Name: string
+    <<PK>> Portion: string
+    Preis: float
+}
+
+class Kunde{
+    <<PK>> Matrikelnummer: int
+    Vorname: string
+    Nachname: string
+    Telefonnummer: string
+    Adresse: string
+}
+
+class Koch{
+    Hauben: int
+}
+
+class Kellner
+class Abräumer
+
+class Angestellter{
+    <<PK>> SVNr: string
+    Vorname: string
+    Nachname: string
+    Gehalt: float
+}
+
+class Person
+
+class Zutat{
+    <<PK>> Name: string
+    Vorrat: float
+    Einheit: string
+}
+
+class RezeptZutat{
+    Menge: float
+    Einheit: string
+}
+
+class Tisch{
+    <<PK>> Nummer: int
+    Plätze: int
+}
+
+class Bestellung{
+    <<PK>> Time: DateTime
+    OpenTab: float
+    IsPaid: bool
+}
+
+Circle c1
+Circle c2
+
+Koch -down- c1
+Kellner -down- c1
+Abräumer -down- c1
+
+Kunde -down- c2
+Angestellter -left- c2
+
+c1 -down-|> Angestellter: {complete, overlapping}
+c2 -left-|> Person: {complete, overlapping}
+
+Speise "0..*" -down- "3..*" Zutat : enthält >
+
+(Speise, Zutat) .. RezeptZutat
+
+Abräumer "1..*" -up- "5..10" Tisch : räumt ab >
+
+Bestellung "0..*" -- "1..*" Kellner : bearbeitet <
+Bestellung "0..*" --* "1" Tisch : gehört zu >
+Bestellung "0..*" -down- "1..*" Kunde : bestellt <
+Bestellung "0..*" -down- "1..*" Speise : enthält >
+Bestellung "0..*" -down- "1..*" Getränk : enthält >
+
+Angestellter "2..*" -- "0..*" Angestellter: vertritt >
+
+
+@enduml

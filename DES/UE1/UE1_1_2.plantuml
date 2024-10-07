@@ -1,0 +1,34 @@
+@startuml UE1_1_2
+
+hide circle
+
+class Rezept{
+    <<PK>> Name: string
+    Zubereitungszeit: time
+}
+note top #red
+IstVegetarisch lässt sich von den Zutaten ableiten
+end note
+
+class Zutat{
+    <<PK>> Name: string
+    IstVegetarisch: bool
+}
+
+class RezeptZutat{
+    Menge: number
+    Einheit: string
+}
+
+Rezept "0..*" -down- "1..*" Zutat : enthält >
+
+(Rezept, Zutat) -right- RezeptZutat
+
+note as n1 #red
+Die Zutaten und das Rezept wurden
+in 3 Klassen aufgeteilt, dadurch
+kann man das Model leichter erweitern
+und die Zutaten mehrfach verwenden.
+end note
+
+@enduml
