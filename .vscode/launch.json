@@ -5,43 +5,43 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Run",
+            "name": "C++ Run with lib",
             "type": "f5anything",
             "request": "launch",
             "command": "${fileDirname}/bin/${fileBasenameNoExtension}",
             "terminalName": "C++ Execution",
             "terminalIndex": -1,
             "showTerminal": true,
-            "preLaunchTask": "G++ Build"
+            "preLaunchTask": "G++ Build with lib"
         },
         {
-            "name": "C Run",
+            "name": "C Run with lib",
             "type": "f5anything",
             "request": "launch",
             "command": "${fileDirname}/bin/${fileBasenameNoExtension}",
             "terminalName": "C Execution",
             "terminalIndex": -1,
             "showTerminal": true,
-            "preLaunchTask": "GCC Build"
+            "preLaunchTask": "GCC Build with lib"
         },
         {
-            "name": "C Build",
+            "name": "C Build with lib",
             "type": "f5anything",
             "showTerminal": false,
-            "preLaunchTask": "GCC Build",
+            "preLaunchTask": "GCC Build with lib",
             "request": "launch",
             "command": "echo Building C"
         },
         {
-            "name": "C++ Build",
+            "name": "C++ Build with lib",
             "type": "f5anything",
             "showTerminal": false,
-            "preLaunchTask": "G++ Build",
+            "preLaunchTask": "G++ Build with lib",
             "request": "launch",
             "command": "echo Building C++"
         },
         {
-            "name": "C++ Debug Launch",
+            "name": "C++ Debug Launch with lib",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
@@ -52,7 +52,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "/run/current-system/sw/bin/gdb",
-            "preLaunchTask": "G++ Build",
+            "preLaunchTask": "G++ Build with lib",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "name": "C Debug Launch",
+            "name": "C Debug Launch with lib",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
@@ -78,7 +78,95 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "/run/current-system/sw/bin/gdb",
-            "preLaunchTask": "GCC Build",
+            "preLaunchTask": "GCC Build with lib",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "C++ Run without lib",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "${fileDirname}/bin/${fileBasenameNoExtension}",
+            "terminalName": "C++ Execution",
+            "terminalIndex": -1,
+            "showTerminal": true,
+            "preLaunchTask": "G++ Build without lib"
+        },
+        {
+            "name": "C Run without lib",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "${fileDirname}/bin/${fileBasenameNoExtension}",
+            "terminalName": "C Execution",
+            "terminalIndex": -1,
+            "showTerminal": true,
+            "preLaunchTask": "GCC Build without lib"
+        },
+        {
+            "name": "C Build without lib",
+            "type": "f5anything",
+            "showTerminal": false,
+            "preLaunchTask": "GCC Build without lib",
+            "request": "launch",
+            "command": "echo Building C"
+        },
+        {
+            "name": "C++ Build without lib",
+            "type": "f5anything",
+            "showTerminal": false,
+            "preLaunchTask": "G++ Build without lib",
+            "request": "launch",
+            "command": "echo Building C++"
+        },
+        {
+            "name": "C++ Debug Launch without lib",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}/bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/run/current-system/sw/bin/gdb",
+            "preLaunchTask": "G++ Build without lib",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "C Debug Launch without lib",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}/bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/run/current-system/sw/bin/gdb",
+            "preLaunchTask": "GCC Build without lib",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

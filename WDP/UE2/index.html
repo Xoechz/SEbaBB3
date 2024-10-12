@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Blog</title>
+    <link rel="icon" type="image/png" href="images/logo-de.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="layout_float.css">
+    <meta charset="utf-8" lang="en">
+    <style>
+        .firstEntryHeader {
+            color: #0000ff;
+            font-family: 'Times New Roman', Times, serif;
+            text-shadow: black 2px 2px 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header style="background-color: black;">
+        <h1 style="color: white;">My Blog</h1>
+    </header>
+    <nav style="background-color: gray;">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="create.html">Create Entry</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="flow-example.html">Flow</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="firstEntryHeader blogTitle">Using p, div, span and h Tags with examples</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <p>This is a paragraph</p>
+                <div style="border: 1px solid black;">This is a div, it uses a border
+                    <p>
+                        There is a span ahead <span class="highlight lowlight">This is a span</span> That was a span
+                    </p>
+                </div>
+                <h1>This is a header 1</h1>
+                <h2>This is a header 2</h2>
+                <h3 class="highlight">This is a header 3</h3>
+                <h4>This is a header 4</h4>
+                <h5 class="lowlight">This is a header 5</h5>
+                <h6>This is a header 6</h6>
+            </div>
+            <hr>
+        </section>
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="blogTitle">Using Lists</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <ul class="alternate-rows">
+                    <li>Unordered List Item 1</li>
+                    <li>Unordered List Item 2</li>
+                    <li>Unordered List Item 3</li>
+                </ul>
+                <ol>
+                    <li>Ordered List Item 1</li>
+                    <li>Ordered List Item 2</li>
+                    <li>Ordered List Item 3</li>
+                </ol>
+            </div>
+            <hr>
+        </section>
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="blogTitle">Using small, strong and quote</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <p>This is a <small>small</small> text</p>
+                <p>This is a <strong>strong</strong> text</p>
+                <p>This is a <q>quote</q> text</p>
+            </div>
+            <hr>
+        </section>
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="blogTitle">Using code and pre</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <code>This is code<br>
+                &lt;!DOCTYPE html><br>
+            &lt;html lang="en"><br>
+            &lt;head><br>
+            &lt;title>My Blog&lt;/title><br>
+            &lt;/head><br>
+            &lt;body><br>
+            &lt;h1>My Blog&lt;/h1><br>
+            &lt;/body><br>
+            &lt;/html>
+        </code>
+                <pre>This 
+                            is 
+        a 
+                                        preformatted
+                     text</pre>
+            </div>
+            <hr>
+        </section>
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="blogTitle">Using links</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <a href="https://www.youtube.com/watch?v=GFq6wH5JR2A">This is a link</a>
+            </div>
+            <hr>
+        </section>
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="blogTitle">Using img and figure</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <img src="images/karsten-winegeart-_du_y91pXuc-unsplash.jpg" width="300" alt="A beautiful landscape">
+                <figure>
+                    <img src="images/karsten-winegeart-_du_y91pXuc-unsplash.jpg" width="300"
+                        alt="A beautiful landscape">
+                    <figcaption>This is a beautiful landscape</figcaption>
+                </figure>
+            </div>
+            <hr>
+        </section>
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="blogTitle">Using tables</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <table>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                    </tr>
+                    <tr>
+                        <td>Row 1, Cell 1</td>
+                        <td>Row 1, Cell 2</td>
+                        <td>Row 1, Cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2, Cell 1</td>
+                        <td>Row 2, Cell 2</td>
+                        <td>Row 2, Cell 3</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+        </section>
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="blogTitle">Using details and summary</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <details>
+                    <summary>Click me</summary>
+                    <p>This is a hidden text</p>
+                </details>
+            </div>
+            <hr>
+        </section>
+        <section class="blogEntry">
+            <img class="blogProfilePicture" src="images/elliot-wilkinson-ZcRYzw3UCvY-unsplash.jpg"
+                alt="Profile Picture">
+            <div class="blogHeader">
+                <h2 class="blogTitle">Using math and svg</h2>
+                <p class="blogAuthor">John Doe</p>
+                <p class="blogDate">2024-10-13</p>
+            </div>
+            <div class="blogContent">
+                <math>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>+</mo>
+                        <mi>y</mi>
+                        <mo>=</mo>
+                        <mi>z</mi>
+                    </mrow>
+                </math>
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+            </div>
+            <hr>
+        </section>
+        <section style="border: 2px solid red; padding: 10px;">
+            <h3>Subscribe</h3>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email">
+                <br>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Name">
+                <br>
+                <label for="color">Favorite Color:</label>
+                <input type="color" id="color">
+                <br>
+                <label for="comment">Comment:</label>
+                <br>
+                <textarea id="comment" placeholder="Comment" style="width: 300px; height: 200px;"></textarea>
+                <br>
+                <label for="monthlyOrWeekly">Monthly or Weekly:</label>
+                <select id="monthlyOrWeekly">
+                    <option value="monthly">Monthly</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+                <br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+    </div>
+    <hr>
+    </section>
+    </div>
+    <div id="cookie">
+        Cookie Monster loves &#x1F36A!
+    </div>
+    <footer class="clear">
+        &copy; My Blog
+    </footer>
+</body>
+
+</html>

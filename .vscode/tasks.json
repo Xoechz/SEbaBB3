@@ -2,18 +2,16 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "G++ Build",
+            "label": "G++ Build without lib",
             "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
                 "${file}",
-                "${fileDirname}/lib/*.cpp",
                 "-g",
                 "-Og",
                 "-pedantic",
                 "-Wall",
                 "-Wextra",
-                "-std=c90",
                 "-o",
                 "${fileDirname}/bin/${fileBasenameNoExtension}"
             ],
@@ -30,7 +28,62 @@
         },
         {
             "type": "cppbuild",
-            "label": "GCC Build",
+            "label": "GCC Build without lib",
+            "command": "gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-Og",
+                "-pedantic",
+                "-Wall",
+                "-Wextra",
+                "-std=c99",
+                "-o",
+                "${fileDirname}/bin/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: gcc"
+        },
+        {
+            "type": "cppbuild",
+            "label": "G++ Build with lib",
+            "command": "g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "${file}",
+                "${fileDirname}/lib/*.cpp",
+                "-g",
+                "-Og",
+                "-pedantic",
+                "-Wall",
+                "-Wextra",
+                "-o",
+                "${fileDirname}/bin/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "cppbuild",
+            "label": "GCC Build with lib",
             "command": "gcc",
             "args": [
                 "-fdiagnostics-color=always",
@@ -41,6 +94,7 @@
                 "-pedantic",
                 "-Wall",
                 "-Wextra",
+                "-std=c99",
                 "-o",
                 "${fileDirname}/bin/${fileBasenameNoExtension}"
             ],

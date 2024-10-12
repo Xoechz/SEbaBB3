@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flow Example</title>
+    <link rel="icon" type="image/png" href="images/logo-de.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <style>
+        p {
+            background-color: coral;
+        }
+
+        span {
+            background-color: lightblue;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .h {
+            height: 200px;
+        }
+
+        .w {
+            width: 200px;
+        }
+
+        .relative {
+            position: relative;
+            top: 50px;
+            left: 50px;
+            opacity: 0.8;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            opacity: 0.8;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            opacity: 0.8;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header style="background-color: black;">
+        <h1 style="color: white;">My Blog</h1>
+    </header>
+    <nav style="background-color: gray;">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="create.html">Create Entry</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="flow-example.html">Flow</a></li>
+        </ul>
+    </nav>
+    <h2>block</h2>
+    <p class="h w relative">p Block 1</p>
+    <p class="h w absolute">p Block 2</p><span class="block h w">span 1</span><span class="block h w">span 2</span>
+    <p class="h w fixed">p Block 3</p>
+    <hr>
+    <h2>inline</h2>
+    <p class="inline h w">p Block 1</p>
+    <p class="inline h w">p Block 2</p><span class="h w">span 1</span><span class="h w">span 2</span>
+    <hr>
+    <h2>inline-block</h2>
+    <p class="inline-block h w">p Block 1</p>
+    <p class="inline-block h w">p Block 2</p><span class="inline-block h w">span 1</span><span
+        class="inline-block h w">span 2</span>
+    <hr>
+</body>
+
+</html>

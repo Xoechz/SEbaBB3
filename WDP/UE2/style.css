@@ -1,0 +1,84 @@
+.blogEntry {
+    border: 1px dashed black;
+    padding: 30px;
+    margin: 10px;
+    background-color: #eeeeee;
+}
+
+.blogEntry:hover {
+    background-color: #cccccc;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #00ff00;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: black 2px 2px 2px;
+}
+
+.highlight {
+    color: #ff0000;
+    font-style: italic;
+    border: black 1px dotted;
+}
+
+.highlight:hover {
+    background-color: #ff0000;
+    color: #000000;
+}
+
+.lowlight {
+    text-decoration: underline;
+}
+
+.blogEntry ul>li {
+    list-style-type: "\1F44C";
+}
+
+ul.alternate-rows>li:nth-child(2) {
+    background-color: #888888;
+}
+
+.blogEntry ol>li {
+    list-style-type: upper-roman;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+a:hover {
+    color: black;
+    background-color: #0000ff;
+}
+
+a:visited {
+    color: #ff00ff;
+}
+
+a:visited:hover {
+    color: black;
+    background-color: #ff00ff;
+}
+
+a:active {
+    border-bottom: 5px dotted black;
+}
+
+.blogProfilePicture {
+    border-radius: 50%;
+    width: 100px;
+    aspect-ratio: 1/1;
+}
