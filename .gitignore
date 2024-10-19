@@ -761,3 +761,6 @@ TSWLatexianTemp*
 
 # direnv
 .direnv/
+
+# build folder
+build/

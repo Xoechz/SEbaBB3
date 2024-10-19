@@ -1,0 +1,17 @@
+# comment
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -std=c99 -pedantic -g
+
+LD = gcc
+LDFLAGS = -lm
+
+.c.o: #suffix rule
+	$(CC) $(CFLAGS) -c $<
+
+ue3: lib.o printf1.o
+	$(LD) -o $@ lib.o printf1.o $(LDFLAGS)
+# $@ is the full target name
+
+lib.o: lib.c lib.h
+printf1.o: printf1.c lib.h
