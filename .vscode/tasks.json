@@ -1,8 +1,9 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "G++ Build without lib",
+            "label": "G++ Build",
             "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
@@ -28,7 +29,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "GCC Build without lib",
+            "label": "GCC Build",
             "command": "gcc",
             "args": [
                 "-fdiagnostics-color=always",
@@ -55,61 +56,48 @@
             "detail": "compiler: gcc"
         },
         {
-            "type": "cppbuild",
-            "label": "G++ Build with lib",
-            "command": "g++",
-            "args": [
-                "-fdiagnostics-color=always",
-                "${file}",
-                "${fileDirname}/lib/*.cpp",
-                "-g",
-                "-Og",
-                "-pedantic",
-                "-Wall",
-                "-Wextra",
-                "-o",
-                "${fileDirname}/bin/${fileBasenameNoExtension}"
+            "type": "make",
+            "targetName": "all",
+            "makeFileRelativePath": "${relativeFileDirname}/Makefile",
+            "problemMatcher": [
+                {
+                    "base": "$gcc",
+                    "fileLocation": [
+                        "autoDetect",
+                        "${fileDirname}"
+                    ]
+                }
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
+            "label": "current dir make: all",
+            "detail": "${relativeFileDirname}/Makefile",
             "group": {
-                "kind": "build",
-                "isDefault": true
+                "kind": "build"
             }
         },
         {
-            "type": "cppbuild",
-            "label": "GCC Build with lib",
-            "command": "gcc",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "${fileDirname}/lib/*.c",
-                "-Og",
-                "-pedantic",
-                "-Wall",
-                "-Wextra",
-                "-std=c99",
-                "-o",
-                "${fileDirname}/bin/${fileBasenameNoExtension}"
+            "type": "make",
+            "targetName": "test",
+            "makeFileRelativePath": "${relativeFileDirname}/Makefile",
+            "problemMatcher": [
+                {
+                    "base": "$gcc",
+                    "fileLocation": [
+                        "autoDetect",
+                        "${fileDirname}"
+                    ]
+                }
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
+            "label": "current dir make: test",
+            "detail": "${relativeFileDirname}/Makefile",
             "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "compiler: gcc"
+                "kind": "build"
+            }
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
