@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flex Example</title>
+    <style>
+        .x {
+            margin: 10px;
+            width: 75px;
+            height: 75px;
+            background-color: coral;
+        }
+
+        .x:nth-child(even) {
+            width: 50px;
+            height: 100px;
+            background-color: cornflowerblue;
+        }
+
+        #root {
+            background-color: bisque;
+            width: 500px;
+            height: 500px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: left;
+            align-content: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="x">1</div>
+        <div class="x">2</div>
+        <div class="x">3</div>
+        <div class="x">4</div>
+        <div class="x">5</div>
+        <div class="x">6</div>
+        <div class="x">7</div>
+        <div class="x">8</div>
+        <div class="x">9</div>
+        <div class="x">10</div>
+    </div>
+
+</html>

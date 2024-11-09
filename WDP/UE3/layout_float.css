@@ -1,0 +1,76 @@
+header {
+    display: flow-root;
+    background-color: #dae8fc;
+    padding: 10px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    background-color: #ffe6cc;
+    float: left;
+    width: 20%;
+}
+
+.blogEntry {
+    padding: 0;
+}
+
+#main {
+    float: left;
+    width: 80%;
+}
+
+#cookie {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    background-color: #f8cecc;
+    opacity: 0.8;
+}
+
+footer {
+    background-color: #f8cecc;
+}
+
+.clear {
+    clear: left;
+}
+
+.blogHeader {
+    float: left;
+    width: 85%;
+    margin: 0;
+    background-color: #dddddd;
+    padding: 0;
+}
+
+.blogTitle {
+    margin: 10px;
+}
+
+.blogProfilePicture {
+    float: left;
+    width: 15%;
+    margin: 0;
+    aspect-ratio: 1/1;
+}
+
+.blogAuthor,
+.blogDate {
+    float: left;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+    margin-top: 0;
+}
+
+
+.blogContent {
+    clear: left;
+    width: 100%;
+    padding: 10px;
+}
