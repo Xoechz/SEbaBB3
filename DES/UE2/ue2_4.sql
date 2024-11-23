@@ -58,4 +58,4 @@ INNER JOIN
 (SELECT CUSTOMER_ID, SUM(AMOUNT) AS Revenue FROM PAYMENT GROUP BY CUSTOMER_ID) RevenuePerCustomer
     ON c.CUSTOMER_ID = RevenuePerCustomer.CUSTOMER_ID
 GROUP BY c.STORE_ID) MaxRevenuePerStore
-    ON cOut.STORE_ID = MaxRevenuePerStore.STORE_ID AND RevenuePerCustomer.Revenue = MaxRevenuePerStore.MaxRevenue
+    ON cOut.STORE_ID = MaxRevenuePerStore.STORE_ID AND RevenuePerCustomer.Revenue = MaxRevenuePerStore.MaxRevenue;

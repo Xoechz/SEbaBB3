@@ -13,7 +13,6 @@
 \usepackage{amsfonts}
 \usepackage{algorithm2e}
 \usepackage{listings}
-\usepackage{csquotes}
 
 %pdfs
 \usepackage{pdfpages}
@@ -74,7 +73,7 @@
 	\node at (current page.center) {\includegraphics[page=1]{Angabe.pdf}};
 	\begin{scope}[shift={(current page.south west)},every node/.style={anchor=base west}]
 		\node at (8.5cm, 26.4cm) {\theauthor};
-		\node at (17.2cm, 26.4cm) {5};
+		\node at (17.2cm, 26.4cm) {8};
 		\node at (1.87cm, 26.35cm) {X};
 	\end{scope}
 \end{tikzpicture}
@@ -135,9 +134,47 @@ Die Einrelationenabbildung wäre wieder möglich und ist, da ein Manager keine A
 	Aussendienst( &
 	\PK{MitarbeiterNr} : \FK{Mitarbeiter}, \var{Dienstwagen}) \\
 \end{relationalmodel}
+\pagebreak
 
 \section{SQL-Wiederholdung}
+\inputminted{sql}{../ue2_2.sql}
+\pagebreak
 
+\section{Sakila-Statistik}
+\inputminted{sql}{../ue2_3.sql}
+\pagebreak
 
+\section{Aggregate und Gruppierungen}
+\inputminted{sql}{../ue2_4.sql}
+\pagebreak
+
+\section{GROUP BY mit GROUPING SETS / ROLLUP}
+\inputminted{sql}{../ue2_5.sql}
+
+\subsection{Vergleich der Query Pläne}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{../ue2_5_1.png}
+	\caption{Queryplan ROLLUP}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{../ue2_5_2.png}
+	\caption{Queryplan GROUPING SETS}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{../ue2_5_3.png}
+	\caption{Queryplan manuelles GROUP BY}
+\end{figure}
+
+Wie man sieht optimiert die Datenbank die Querys unterschiedlich.
+Die GROUPING SETS und ROLLUP Querys sind sich sehr ähnlich und haben das selbe \emph{weight}.
+Die manuelle GROUP BY Query hat ein höheres \emph{weight} und ist daher langsamer, weil durch das UNION mehrfach abgefragt wird.
+
+\section{GROUP BY mit GROUPING SETS / CUBE}
+\inputminted{sql}{../ue2_6.sql}
+\pagebreak
 
 \end{document}
