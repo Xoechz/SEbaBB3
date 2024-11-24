@@ -5,14 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run",
+            "name": "CMake: Run",
             "type": "f5anything",
             "request": "launch",
             // Resolved by CMake Tools:
             "command": "${command:cmake.launchTargetPath}"
         },
         {
-            "name": "Debug",
+            "name": "CMake: Debug",
             "type": "cppdbg",
             "request": "launch",
             // Resolved by CMake Tools:
