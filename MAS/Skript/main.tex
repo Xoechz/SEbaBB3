@@ -1,0 +1,136 @@
+\documentclass[12pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[naustrian]{babel}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{csquotes}
+
+%pdfs
+\usepackage{pdfpages}
+\usepackage{tikz}
+
+%page borders
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm}
+
+% binary tree
+\usepackage{tikz-qtree}
+
+\newenvironment{code}{\captionsetup{type=listing}}{}
+
+%title/footer/header values
+\usepackage{titling}
+\title{MAS3 Skript}
+\author{SEbaBB 2024}
+\date{\today{}, Hagenberg}
+
+%footer/header
+%\usepackage[automark]{scrpage2}
+%\pagestyle{headings}
+%\clearscrheadfoot
+%\ihead{\thetitle}
+%\chead{\theauthor}
+%\ohead{\today}
+%\cfoot{Seite \pagemark}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\pagebreak
+
+\section{Einführung}
+
+Folgende Teilbereiche der Statistik werden behandelt:
+\begin{itemize}
+    \item Deskriptive Statistik
+    \item Induktive Statistik
+    \item Wahrscheinlichkeitsrechnung
+\end{itemize}
+
+\subsection{Übersicht Deskriptive und Induktive Statistik}
+
+Die Deskriptive Statistik, auch beschreibende Statistik beschäftigt sich mit der Beschreibung von Daten.
+Man versucht dabei Daten mihilfe von Lage- und Streuungsmaßen in einer verständlichen Form darzustellen.\par
+
+Manchmal hat man keinen Zugriff zu allen Daten, dann bedient man sich der Induktiven Statistik, auch schließende Statistik. Mithilfe von Stichproben versuchtman Schlussfolgerungen auf die Grundgesamtheit zu ziehen.
+
+Folgende Bereiche werden behandelt:
+\begin{itemize}
+    \item Lageparameter
+    \item Streuungsparameter
+    \item Lineare Transformationen
+    \item Zusammenhangsmaße
+\end{itemize}
+
+\subsection{Übersicht Wahrscheinlichkeitsrechnung}
+
+Die Wahrscheinlichkeitsrechnung beschäftigt sich mit der Quantifizierung von Zufäll. Zufälle sind Ereignisse, die nicht vollständig vorhersehbar sind.
+Die Wahrscheinlichkeitsrechnung modeliert diese Zufälle und ermöglicht es, Aussagen über die Wahrscheinlichkeit von Ereignissen zu treffen.
+
+Folgende Bereiche werden behandelt:
+\begin{itemize}
+    \item Laplace'sche Annahme
+    \item Kombinatorik
+    \item Axiome der Wahrscheinlichkeit
+    \item Unaabhängigkeit
+    \item Randwahrscheinlichkeit
+    \item Diskrete und stetige Verteilungen
+    \item Verteilungen
+\end{itemize}
+
+\section{Statistik}
+
+\subsection{Grundbegiffe}
+
+\begin{table}
+    \begin{tabular}{ | c | c | }
+        \hline
+        Begriff                   & Definition                                              \\
+        \hline
+        \hline
+        Statistische Masse        & Menge von statistischen Einheiten                       \\&\\
+                                  & Die statistische Masse muss vor jeder statistischen     \\
+                                  & Tätigkeit in räumlicher, zeitlicher und sachlicher      \\
+                                  & Hinsicht präzise definiert werden.                      \\
+        \hline
+        Statistische Einheit      & Objekt, das Merkmale besitzt                            \\
+        \hline
+        Qualitatives Merkmal      & Merkmal, das nicht gemessen werden kann                 \\
+                                  & (z.B. Geschlecht, Farbe)                                \\
+        \hline
+        Quantitatives Merkmal     & Merkmal, das gemessen werden kann und eine Einheit      \\
+                                  & besitzt (z.B. Größe, Gewicht)                           \\
+        \hline
+        Primärstatistik           & Daten werden eigens für die statistische Zwecke erhoben \\
+        \hline
+        Sekundärstatistik         & Daten werden für andere Zwecke erhoben und für          \\
+                                  & statistische Zwecke verwendet                           \\
+        \hline
+        Voll/Totalerhebung        & Alle statistischen Einheiten der Masse werden erfasst   \\
+        \hline
+        Teilerhebung/Stichprobe   & Nur ein Teil der s. Einheiten wird erfasst              \\
+        \hline
+        Zufallsstichprobe         & s. Einheiten werden zufällig gewählt                    \\
+        \hline
+        Repräsentative Stichprobe & s. Einheiten werden so gewählt, dass ihre Merkmale mit  \\
+                                  & der gleicher relativen Häufigkeit (\emph{Quoten}), wie  \\
+                                  & in der Gesamtmasse vorkommen.                           \\
+        \hline
+
+        \hline
+    \end{tabular}
+    \caption{Grundbegriffe}
+\end{table}
+
+\end{document}
