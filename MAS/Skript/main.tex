@@ -89,48 +89,273 @@ Folgende Bereiche werden behandelt:
     \item Verteilungen
 \end{itemize}
 
+\pagebreak
+
 \section{Statistik}
 
 \subsection{Grundbegiffe}
 
-\begin{table}
+\begin{table}[h]
     \begin{tabular}{ | c | c | }
         \hline
-        Begriff                   & Definition                                              \\
+        Begriff               & Definition                                                \\
         \hline
         \hline
-        Statistische Masse        & Menge von statistischen Einheiten                       \\&\\
-                                  & Die statistische Masse muss vor jeder statistischen     \\
-                                  & Tätigkeit in räumlicher, zeitlicher und sachlicher      \\
-                                  & Hinsicht präzise definiert werden.                      \\
+        Statistische Masse    & Menge von statistischen Einheiten                         \\&\\
+                              & Die statistische Masse muss vor jeder statistischen       \\
+                              & Tätigkeit in räumlicher, zeitlicher und sachlicher        \\
+                              & Hinsicht präzise definiert werden.                        \\
         \hline
-        Statistische Einheit      & Objekt, das Merkmale besitzt                            \\
+        Statistische Einheit  & Objekt, das Merkmale besitzt.                             \\
         \hline
-        Qualitatives Merkmal      & Merkmal, das nicht gemessen werden kann                 \\
-                                  & (z.B. Geschlecht, Farbe)                                \\
+        Qualitatives Merkmal  & Merkmal, das nicht gemessen werden kann.                  \\
+                              & (z.B. Geschlecht, Farbe)                                  \\
         \hline
-        Quantitatives Merkmal     & Merkmal, das gemessen werden kann und eine Einheit      \\
-                                  & besitzt (z.B. Größe, Gewicht)                           \\
+        Quantitatives Merkmal & Merkmal, das gemessen werden kann und eine Einheit        \\
+                              & besitzt. (z.B. Größe, Gewicht)                            \\
         \hline
-        Primärstatistik           & Daten werden eigens für die statistische Zwecke erhoben \\
+        Primärstatistik       & Daten werden eigens für die statistische Zwecke erhoben.  \\
         \hline
-        Sekundärstatistik         & Daten werden für andere Zwecke erhoben und für          \\
-                                  & statistische Zwecke verwendet                           \\
+        Sekundärstatistik     & Daten werden für andere Zwecke erhoben und für            \\
+                              & statistische Zwecke verwendet.                            \\
         \hline
-        Voll/Totalerhebung        & Alle statistischen Einheiten der Masse werden erfasst   \\
+        Voll/Totalerhebung    & Alle statistischen Einheiten der Masse werden erfasst.    \\
         \hline
-        Teilerhebung/Stichprobe   & Nur ein Teil der s. Einheiten wird erfasst              \\
+        Teilerhebung/         & Nur ein Teil der s. Einheiten wird erfasst.               \\
+        Stichprobe            &                                                           \\
         \hline
-        Zufallsstichprobe         & s. Einheiten werden zufällig gewählt                    \\
+        Zufallsstichprobe     & s. Einheiten werden zufällig gewählt.                     \\
         \hline
-        Repräsentative Stichprobe & s. Einheiten werden so gewählt, dass ihre Merkmale mit  \\
-                                  & der gleicher relativen Häufigkeit (\emph{Quoten}), wie  \\
-                                  & in der Gesamtmasse vorkommen.                           \\
+        Repräsentative        & s. Einheiten werden so gewählt, dass ihre Merkmale mit    \\
+        Stichprobe            & der gleicher relativen Häufigkeit (\emph{Quoten}), wie    \\
+                              & in der Gesamtmasse vorkommen.                             \\
         \hline
-
+        Urliste               & Liste, die direkt bei der Datenerhebung entsteht.         \\
+        \hline
+        Stab/Balkendiagramm   & Diagramm, bei dem die Häufigkeit der Merkmalsausprägung   \\
+                              & durch die Länge der Stäbe/Balken dargestellt wird.        \\
+        \hline
+        Klasse                & Intervall, in dem die Merkmalsausprägungen                \\
+                              & zusammengefasst werden. (z.B. 0-10 Jahre, 11-20 Jahre...) \\
+        \hline
+        Kumulierte Häufigkeit & Summe der Häufigkeiten von einer Schranke bis zu einem    \\
+                              & bestimmten Wert.                                          \\&\\
+                              & Nur bei qualitativ ordinalen oder quantitativen Merkmalen \\
         \hline
     \end{tabular}
-    \caption{Grundbegriffe}
+    \caption{Grundbegriffe 1}
+\end{table}
+\pagebreak
+\begin{table}[h]
+    \begin{tabular}{ | c | c | }
+        \hline
+        Begriff      & Definition                                                     \\
+        \hline
+        \hline
+        Empirische   & Verteilung der Merkmalsausprägungen in einer Stichprobe.       \\&\\
+        Verteilung   & Gibt die kumulierte Häufigkeit der Merkmalsausprägungen        \\
+                     & an. Die dafür Formel ist:                                      \\&\\
+                     & $F(x) =\frac{Anzahl mit Merkmal \leq x}
+        {Anzahl alle Elemente}$                                                       \\&\\
+        \hline
+        Lage         & Lageparameter helfen das Zentrum der Verteilung zu  bestimmen. \\
+                     & (Modus, Median, Arithmetisches Mittel)                         \\
+        \hline
+        Streuung     & Streuungsparameter helfen zu ermitteln wie stark die Werte um  \\
+                     & den Durchschnitt verteilt sind.                                \\
+        \hline
+        Schiefe      & Schiefe der Verteilung gibt an, ob die Verteilung symmetrisch  \\
+                     & ist, oder ob sie nach links oder rechts neigt.                 \\
+        \hline
+        Wölbung      & Wölbung der Verteilung gibt an, ob die Verteilung spitz oder   \\
+                     & flach ist, das heißt ob die Werte um den Durchschnitt geballt  \\
+                     & sind oder ob sie gleichmäßig verteilt sind                     \\
+        \hline
+        Zusammenhang & Zusammenhangsmaße geben an, ob und wie stark zwei Merkmale     \\
+                     & miteinander zusammenhängen.                                    \\
+        \hline
+    \end{tabular}
+    \caption{Grundbegriffe 2}
+\end{table}
+
+\subsection{Notation}
+
+\begin{table}[h]
+    \begin{tabular}{ | c | c | }
+        \hline
+        Zeichen   & Bedeutung                               \\
+        \hline
+        \hline
+        $N$       & Anzahl der Elemente der Grundgesamtheit \\
+        $n$       & Anzahl der Elemente der Stichprobe      \\
+        $\mu$     & Durchschnitt der Grundgesamtheit        \\
+        $\bar{x}$ & Durchschnitt der Stichprobe             \\
+        $\sigma$  & Standardabweichung der Grundgesamtheit  \\
+        $s$       & Standardabweichung der Stichprobe       \\
+        $q_n$     & n-tes Quantil                           \\
+        \hline
+    \end{tabular}
+    \caption{Notation}
+\end{table}
+
+\subsection{Lageparameter}
+\subsection{Streuungsparameter}
+\subsection{Lineare Transformationen}
+\subsection{Zusammenhangsmaße}
+\section{Wahrscheinlichkeitsrechnung}
+\subsection{Laplace'sche Annahme}
+\subsection{Kombinatorik}
+\subsection{Axiome der Wahrscheinlichkeit}
+\subsection{Unabhängigkeit}
+\subsection{Randwahrscheinlichkeit}
+\subsection{Diskrete und stetige Verteilungen}
+
+\pagebreak
+
+\subsection{Verteilungen}
+
+Verteilungen sind mathematische Modelle, die die Wahrscheinlichkeit von Ereignissen beschreiben.
+
+\subsubsection{Wie wähle ich die richtige Verteilung aus?}
+
+\begin{table}[h]
+    \begin{tabular}{ | c | c | }
+        \hline
+        Verteilung                   & Anwendungsbereich                             \\
+        \hline
+        \hline
+                                     & Diskret                                       \\
+        \hline
+        Diskrete Gleichverteilung    & Zufällige Auswahl von Elementen               \\
+        \hline
+        Hypergeometrische Verteilung & Ziehen ohne Zurücklegen                       \\
+        \hline
+        Binomialverteiltung          & Ziehen mit Zurücklegen                        \\
+        \hline
+        Poissonverteilung            & Anzahl von Ereignissen in einem Zeitintervall \\
+        \hline
+        \hline
+                                     & Stetig                                        \\
+        \hline
+        Normalverteilung             & Messwerte                                     \\
+        \hline
+    \end{tabular}
+    \caption{Übersicht zu Verteilungen}
+\end{table}
+
+Für die Klausur unbedingt einen Taschenrechner mitnehmen der die Verteilungen berechnen kann,
+da die Formeln sehr komplex sind.
+
+\subsubsection{Diskrete Gleichverteilung}
+
+Jedes Element hat die gleiche Wahrscheinlichkeit ausgewählt zu werden,
+daher eignet sich die Gleichverteilung für die Zufällige Auswahl von Elementen.
+
+\begin{table}[h]
+    \begin{tabular}{ | c | c | }
+        \hline
+        Bezeichnung        & Formel                              \\
+        \hline
+        Untere Schranke    & $a$                                 \\
+        Obere Schranke     & $b$                                 \\
+        \hline             &                                     \\
+        Wahrscheinlichkeit & $P(X=x) = \frac{1}{b-a+1}$          \\&\\&\\
+        Erwartungswert     & $\mu = \frac{a+b}{2}$               \\&\\&\\
+        Varianz            & $\sigma^2 = \frac{(b-a+1)^2-1}{12}$ \\&\\
+        \hline
+    \end{tabular}
+    \caption{Diskrete Gleichverteilung}
+\end{table}
+
+\pagebreak
+
+\subsubsection{Hypergeometrische Verteilung}
+
+Die Hypergeometrische Verteilung eignet sich für das Ziehen ohne Zurücklegen.
+Also wenn die Wahrscheinlichkeit für ein Ereignis nicht konstant ist und von vorherigen Ereignissen beeinflusst wird.
+
+\begin{table}[h]
+    \begin{tabular}{ | c | c | }
+        \hline
+        Bezeichnung                & Formel                                                           \\
+        \hline
+        Anzahl Elemente            & $N$                                                              \\
+        Anzahl gewünschter Erfolge & $M$                                                              \\
+        Anzahl Ziehungen           & $n$                                                              \\
+        Anzahl gezogener Erfolge   & $m$                                                              \\
+        \hline                     &                                                                  \\
+        Wahrscheinlichkeit         & $P(X=x) = \frac{\binom{M}{m} * \binom{N-M}{n-m}}{\binom{N}{n}}$  \\&\\&\\
+        Erwartungswert             & $\mu = \frac{n*M}{N}$                                            \\&\\&\\
+        Varianz                    & $\sigma^2 = n * \frac{M}{N} * (1-\frac{M}{N}) * \frac{N-n}{N-1}$ \\&\\
+        \hline
+    \end{tabular}
+    \caption{Hypergeometrische Verteilung}
+\end{table}
+
+\subsubsection{Binomialverteilung}
+
+Die Binomialverteilung eignet sich für das Ziehen mit Zurücklegen.
+Also wenn die Wahrscheinlichkeit für ein Ereignis konstant und unabhängig ist.
+
+\begin{table}[h]
+    \begin{tabular}{ | c | c | }
+        \hline
+        Bezeichnung        & Formel                                      \\
+        \hline
+        Anzahl Ziehungen   & $n$                                         \\
+        Anzahl Erfolge     & $k$                                         \\
+        Wahrscheinlichkeit & $p$                                         \\
+        \hline             &                                             \\
+        Wahrscheinlichkeit & $P(X=x) = \binom{n}{k} * p^k * (1-p)^{n-k}$ \\&\\&\\
+        Erwartungswert     & $\mu = n * p$                               \\&\\&\\
+        Varianz            & $\sigma^2 = n*p*(1-p)$                      \\&\\
+        \hline
+    \end{tabular}
+    \caption{Binomialverteilung}
+\end{table}
+
+\subsubsection{Poissonverteilung}
+
+Die Poissonverteilung eignet sich für die Anzahl von Ereignissen in einem Zeitintervall.
+Die Ereignisse treten unabhängig voneinander auf und die Wahrscheinlichkeit für ein Ereignis ist konstant.
+
+\begin{table}[h]
+    \begin{tabular}{ | c | c | }
+        \hline
+        Bezeichnung        & Formel                                         \\
+        \hline
+        Anzahl Ereignisse  & $k$                                            \\
+        Ereignisrate       & $\lambda$                                      \\
+
+        \hline             &                                                \\
+        Wahrscheinlichkeit & $P(X=k) = \frac{\lambda^k}{k!} * e^{-\lambda}$ \\&\\&\\
+        Erwartungswert     & $\mu = \lambda$                                \\&\\&\\
+        Varianz            & $\sigma^2 = \lambda$                           \\&\\
+        \hline
+    \end{tabular}
+    \caption{Poissonverteilung}
+\end{table}
+
+\subsubsection{Normalverteilung}
+
+Die Normalverteilung ist stetig und symmetrisch.
+Sie beschreibt die kontinuierliche Verteilung von Messwerten.\par
+Die Wahrscheinlichkeit für ein genaues Ereignis ist 0,
+da es nur Wahrscheinlichkeiten für Intervalle gibt.
+
+\begin{table}[h]
+    \begin{tabular}{ | c | c | }
+        \hline
+        Bezeichnung        & Formel                                                                         \\
+        \hline
+        Erwartungswert     & $\mu$                                                                          \\
+        Standardabweichung & $\sigma$                                                                       \\
+        \hline             &                                                                                \\
+        Wahrscheinlichkeit & $P(a \leq X \leq b) = \Phi(\frac{b-\mu}{\sigma}) - \Phi(\frac{a-\mu}{\sigma})$ \\&\\&\\
+        Varianz            & $\sigma^2$                                                                     \\&\\
+        \hline
+    \end{tabular}
+    \caption{Normalverteilung}
 \end{table}
 
 \end{document}
