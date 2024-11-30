@@ -1,0 +1,15 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "api.mjs",
+  "scripts": {
+    "start": "node api.mjs"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  }
+}
