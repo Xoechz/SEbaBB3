@@ -1,0 +1,42 @@
+-- 1
+-- -1 to exclude the current row
+SELECT f.FILM_ID,
+    TITLE,
+    c.NAME AS CATEGORY,
+    LENGTH,
+    COUNT(*) OVER (PARTITION BY c.CATEGORY_ID ORDER BY LENGTH RANGE BETWEEN 5 PRECEDING AND 5 FOLLOWING) -
+    1 AS Suggestions
+FROM FILM f
+INNER JOIN FILM_CATEGORY fc
+    ON f.FILM_ID = fc.FILM_ID
+INNER JOIN CATEGORY c
+    ON fc.CATEGORY_ID = c.CATEGORY_ID;
+
+-- 2
+SELECT name AS category, title, release_year, num
+FROM (SELECT name, title, release_year, ROW_NUMBER() OVER (PARTITION BY name ORDER BY release_year DESC) AS num
+FROM film
+INNER JOIN film_category
+    USING (film_id)
+INNER JOIN category
+    USING (category_id))
+WHERE num < 4;
+
+-- 3a
+SELECT c.FIRST_NAME,
+    c.LAST_NAME,
+    r.RENTAL_DATE,
+    LAG(r.RENTAL_DATE, 1) OVER (PARTITION BY c.CUSTOMER_ID ORDER BY r.rental_date ) AS previos_rental_date
+FROM CUSTOMER c
+INNER JOIN RENTAL r
+    ON c.CUSTOMER_ID = r.CUSTOMER_ID;
+
+-- 3b
+SELECT FIRST_NAME, LAST_NAME, DAYS
+FROM (SELECT c.FIRST_NAME,
+    c.LAST_NAME,
+    r.RENTAL_DATE - LAG(r.RENTAL_DATE, 1) OVER (PARTITION BY c.CUSTOMER_ID ORDER BY r.rental_date ) AS DAYS
+FROM CUSTOMER c
+INNER JOIN RENTAL r
+    ON c.CUSTOMER_ID = r.CUSTOMER_ID)
+WHERE DAYS > 180;
