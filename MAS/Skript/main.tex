@@ -232,8 +232,95 @@ TODO: IM VORKAPITEL EINBAUEN
 
 \subsection{Diskrete und stetige Verteilungen}
 
+Es gibt zwei Hauptarten von Verteilungen:
+\begin{itemize}
+    \item Diskrete Verteilungen
+    \item Stetige Verteilungen
+\end{itemize}
 
+\subsubsection{Diskrete Verteilungen}
 
+In einer diskreten Verteilung können nur bestimmte abzählbare Werte angenommen werden.
+Die Werte sind oft ganzzahlig, zum Beispiel die Anzahl von Würfen bei einem Würfelspiel oder die Anzahl von Menschen in einer Schlange.\par
+
+Jedes Ereignis hat eine Wahrscheinlichkeit zwischen 0 und 1.
+Die Summe der Wahrscheinlichkeiten aller Ereignisse ist 1.\par
+
+Die Wahrscheinlichkeitsfunktion $f(x)$ gibt die Wahrscheinlichkeit an, dass ein Ereignis $x$ eintritt.\par
+
+\begin{align*}
+    f(x) = P(X=x)
+\end{align*}
+
+Die Verteilungsfunktion $F(x)$ gibt die Wahrscheinlichkeit an, dass ein Ereignis kleiner oder gleich $x$ ist.
+Sie wird durch die Summe der Wahrscheinlichkeiten aller Ereignisse bis $x$ berechnet.\par
+
+\begin{align*}
+    F(x) = P(X \leq x) = \sum_{i=1}^{x} f(x_i)
+\end{align*}
+
+Der Erwartungswert $\mu$ gibt den Durchschnitt der Verteilung an.\par
+
+\begin{align*}
+    \mu = E(x) = \sum_{i=1}^{n} x_i * f(x_i)
+\end{align*}
+
+Beispiele für diskrete Verteilungen sind die diskrete Gleichverteilung, die Hypergeometrische Verteilung, die Binomialverteilung und die Poissonverteilung.
+
+\subsubsection{Stetige Verteilungen}
+
+In einer stetigen Verteilung können unendlich viele Werte angenommen werden. Die Werte sind also nicht abzählbar.
+Das heißt aber nicht das die Werte nicht begrenzt sind, sondern dass es unendlich viele Werte zwischen zwei Werten gibt.
+Beispiele hierfür sind Körpergröße, Gewicht oder Temperatur.\par
+
+Die Wahrscheinlichkeitsdichte $f(a,b)$ gibt die Wahrscheinlichkeit an, dass ein Ereignis in einem Intervall $[a,b]$ eintritt.\par
+
+\begin{align*}
+    f(x) = P(a \leq X \leq b)
+\end{align*}
+
+Die Wahrscheinlichkeit für ein genaues Ereignis ist 0, da es nur Wahrscheinlichkeiten für Intervalle gibt.\par
+
+\begin{align*}
+    P(X=x) = 0
+\end{align*}
+
+Die Verteilungsfunktion $F(x)$ gibt die Wahrscheinlichkeit an, dass ein Ereignis kleiner oder gleich $x$ ist.
+Sie wird durch die Integration der Wahrscheinlichkeitsdichte von $-\infty$ bis $x$ berechnet.\par
+
+\begin{align*}
+    F(x) = P(X \leq x) = \int_{-\infty}^{x} f(x) dx
+\end{align*}
+
+Das Integral der Wahrscheinlichkeitsdichte über den gesamten Wertebereich ist 1.\par
+
+\begin{align*}
+    \int_{-\infty}^{\infty} f(x) dx = 1
+\end{align*}
+
+Der Erwartungswert $\mu$ gibt den Durchschnitt der Verteilung an.\par
+
+\begin{align*}
+    \mu = E(x) = \int_{-\infty}^{\infty} x * f(x) dx
+\end{align*}
+
+Die Varianz $\sigma^2$ gibt die Streuung der Verteilung an.
+Sie gibt die Verteilung der Werte um den Erwartungswert an.
+\par
+
+\begin{align*}
+    \sigma^2 = Var(x) = E(x^2) - E(x)^2
+\end{align*}
+
+Ein Beispiel für eine stetige Verteilung ist die Normalverteilung.
+
+\subsection{Verschiebungssatz}
+
+Der Verschiebungssatz besagt, dass der Erwartungswert einer linearen Transformation einer Zufallsvariablen gleich der linearen Transformation des Erwartungswerts ist.\par
+
+\begin{align*}
+    E(aX+b) = aE(X) + b
+\end{align*}
 
 \subsection{Verteilungen}
 
