@@ -28,11 +28,19 @@ app.get('/entries', (req, res) => {
   res.json(entries);
 });
 
+app.get('/entries/:filter', (req, res) => {
+  const filter = req.params.filter;
+  const filteredEntries = entries.filter(entry => entry.a.includes(filter) || entry.b.includes(filter));
+  res.json(filteredEntries);
+});
+
 app.put('/entries/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const entry = entries.filter(entry => entry.id == id)[0];
   if (entry) {
     entry.b = req.body.b;
+    entry.a = req.body.a;
+    entry.color = req.body.color;
     res.status(200).json(entry);
   } else {
     res.status(404).end();
