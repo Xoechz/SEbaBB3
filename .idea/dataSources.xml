@@ -7,6 +7,9 @@
       <auto-commit>false</auto-commit>
       <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
       <jdbc-url>jdbc:oracle:thin:@orase.fh-hagenberg.at:1521:ORCL</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="dbms_output" value="true" />
+      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

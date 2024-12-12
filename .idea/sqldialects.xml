@@ -21,6 +21,13 @@
     <file url="file://$PROJECT_DIR$/DES/UE3/ue3_4.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/DES/UE3/ue3_5.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/DES/UE3/ue3_6.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/DES/UE4/ue4_1.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/DES/UE4/ue4_2.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/DES/UE4/ue4_3.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/DES/UE4/ue4_3_3.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/DES/plsql/01_plsql_basics.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/DES/plsql/04_Cursor.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/DES/plsql/05_Function_FizzBuzz.sql" dialect="Oracle" />
     <file url="PROJECT" dialect="Oracle" />
   </component>
 </project>
