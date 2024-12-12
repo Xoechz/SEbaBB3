@@ -61,6 +61,7 @@ CREATE OR REPLACE PACKAGE BODY top_salary_pkg AS
     END;
 END;
 
+-- Tests und Initialisierung für Aufgabe 3 und 4
 TRUNCATE TABLE top_salaries;
 ALTER SESSION SET nls_date_format = 'dd.mm.yyyy hh24:mi:ss';
 BEGIN
@@ -72,6 +73,7 @@ BEGIN
     dbms_output.put_line('....................');
     top_salary_pkg.GetTopSalaries(0, 100000);
     dbms_output.put_line('....................');
+    COMMIT ;
 END;
 
 BEGIN

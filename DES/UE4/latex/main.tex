@@ -57,9 +57,9 @@
 \begin{tikzpicture}[remember picture, overlay]
 	\node at (current page.center) {\includegraphics[page=1]{Angabe.pdf}};
 	\begin{scope}[shift={(current page.south west)},every node/.style={anchor=base west}]
-		\node at (8.5cm, 26.4cm) {\theauthor};
-		\node at (17.2cm, 26.4cm) {3};
-		\node at (1.87cm, 26.35cm) {X};
+		\node at (1.87cm, 25.65cm) {X};
+		\node at (8.5cm, 25.75cm) {\theauthor};
+		\node at (17.7cm, 25.75cm) {3.5};
 	\end{scope}
 \end{tikzpicture}
 
@@ -100,6 +100,8 @@
 	\caption{Ergebnis 2 Aufgabe 1.3}
 \end{figure}
 
+\pagebreak
+
 \section{PL/SQL Prozeduren}
 
 \subsection{SQL}
@@ -117,11 +119,52 @@
 \subsection{SQL}
 \inputminted{sql}{../ue4_3.sql}
 
+Für Aufgabe 3.3 und 3.4 wurde folgendes SQL-Statement verwendet:
+
+\inputminted{sql}{../ue4_3_3.sql}
+
+\pagebreak
+
 \subsection{Ergebnisse}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../ue4_3_1.png}
+	\includegraphics[width=1\textwidth]{../ue4_3_1.png}
 	\caption{Ergebnis Aufgabe 3.1-3.2}
 \end{figure}
 
+\subsubsection{Ohne NOWAIT und COMMIT}
+
+Die erste Session läuft durch, die anderen warten, bis die Transaktion der ersten Session beendet ist, also in dem Beispiel für immer.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{../ue4_3_session1_1.png}
+	\caption{Ergebnis Aufgabe 3.3 ohne COMMIT}
+\end{figure}
+
+\subsubsection{Ohne NOWAIT, mit COMMIT}
+
+Da die Transaktion der ersten Session beendet ist, kann die zweite Session die Transaktion durchführen.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{../ue4_3_session1_2.png}
+	\includegraphics[width=1\textwidth]{../ue4_3_session2_1.png}
+	\caption{Ergebnis Aufgabe 3.3 mit COMMIT}
+\end{figure}
+
+\pagebreak
+
+\subsubsection{Mit NOWAIT}
+
+Die erste Session führt einen Commit aus, dadurch ist die Transaktion beendet und die zweite Session läuft weiterhin problemlos durch.
+Die dritte Session wartet aber jetzt nicht mehr, sondern gibt eine Fehlermeldung aus.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{../ue4_3_session1_3.png}
+	\includegraphics[width=1\textwidth]{../ue4_3_session2_2.png}
+	\includegraphics[width=1\textwidth]{../ue4_3_session3_1.png}
+	\caption{Ergebnis Aufgabe 3.4}
+\end{figure}
 \end{document}
