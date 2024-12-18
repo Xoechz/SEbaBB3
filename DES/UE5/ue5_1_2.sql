@@ -1,0 +1,48 @@
+CREATE OR REPLACE TRIGGER CHECK_AMOUNT_TRG
+    BEFORE INSERT OR UPDATE OF AMOUNT
+    ON PAYMENT
+    FOR EACH ROW
+DECLARE
+    CORRECTED_AMOUNT NUMBER;
+    RENTED_FILM_ID FILM.FILM_ID%TYPE;
+    RENTAL_DURATION NUMBER;
+
+BEGIN
+    -- for checking if the trigger is fired
+    Dbms_output.put_line('Trigger fired');
+
+    SELECT i.FILM_ID, r.RETURN_DATE - r.RENTAL_DATE
+    INTO RENTED_FILM_ID, RENTAL_DURATION
+    FROM RENTAL r
+    INNER JOIN INVENTORY i
+        ON r.INVENTORY_ID = i.INVENTORY_ID
+    WHERE r.RENTAL_ID = :NEW.RENTAL_ID;
+
+    CHECK_AMOUNT(RENTED_FILM_ID, :NEW.AMOUNT, RENTAL_DURATION, CORRECTED_AMOUNT);
+
+    :NEW.AMOUNT := CORRECTED_AMOUNT;
+END;
+
+SELECT * from PAYMENT where PAYMENT_ID in (6500, 3000, 1200);
+
+-- works
+UPDATE payment
+SET amount = 25
+WHERE payment_id = 6500;
+
+-- fails
+UPDATE payment
+SET amount = 1
+WHERE payment_id = 3000;
+
+-- works
+UPDATE payment
+SET amount = -10
+WHERE payment_id = 1200;
+
+-- works, no trigger fired
+UPDATE payment
+SET PAYMENT_DATE = TO_DATE('2020-03-19', 'YYYY-MM-DD')
+WHERE payment_id = 1200;
+
+ROLLBACK;
