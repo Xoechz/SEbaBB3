@@ -1,0 +1,41 @@
+ALTER TABLE payment
+    ADD user_modified VARCHAR2(50);
+
+CREATE OR REPLACE TRIGGER LOG_PAYMENT
+    BEFORE UPDATE OF AMOUNT
+    ON PAYMENT
+    FOR EACH ROW
+BEGIN
+    :NEW.user_modified := USER;
+    :NEW.last_update := SYSDATE;
+END;
+
+SELECT *
+FROM PAYMENT
+WHERE PAYMENT_ID = 3000;
+
+UPDATE payment
+SET amount = 1
+WHERE payment_id = 3000;
+
+SELECT *
+FROM PAYMENT
+WHERE PAYMENT_ID = 6500;
+
+UPDATE payment
+SET amount = 25
+WHERE payment_id = 6500;
+
+SELECT *
+FROM PAYMENT
+WHERE PAYMENT_ID = 1200;
+
+-- works, no trigger fired
+UPDATE payment
+SET PAYMENT_DATE = TO_DATE('2020-03-19', 'YYYY-MM-DD')
+WHERE payment_id = 1200;
+
+ROLLBACK;
+
+ALTER TABLE PAYMENT
+    DROP COLUMN user_modified;
