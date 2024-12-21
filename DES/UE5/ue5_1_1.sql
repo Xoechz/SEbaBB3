@@ -17,6 +17,7 @@ BEGIN
     END IF;
 END;
 
+-- Ausgabe 1_1
 DECLARE
     amount NUMBER;
 BEGIN
