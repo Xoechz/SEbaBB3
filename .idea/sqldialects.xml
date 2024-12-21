@@ -32,6 +32,7 @@
     <file url="file://$PROJECT_DIR$/DES/UE5/ue5_2_3.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/DES/UE5/ue5_3_1.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/DES/UE5/ue5_3_2.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/DES/transaction/04_Implizites_Sperren.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/DES/trigger/02b_Instead_of_Trigger_emp_dept.sql" dialect="Oracle" />
     <file url="PROJECT" dialect="Oracle" />
   </component>
