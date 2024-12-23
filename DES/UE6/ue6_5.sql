@@ -1,0 +1,8 @@
+-- Ausgabe 5_1
+SELECT *
+FROM USER_TABLES;
+
+-- Ausgabe 5_2
+SELECT *
+FROM ALL_TABLES
+WHERE owner != 'S2310307019';
