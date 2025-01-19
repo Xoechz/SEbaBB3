@@ -9,7 +9,9 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_executable(socket1 socket1/server.c socket1/WordCheck.h socket1/WordCheck.c)
-
+add_executable(socket2 socket1/forkserver.c socket1/WordCheck.h socket1/WordCheck.c)
+add_executable(client socket1/client.c)
+add_executable(poll socket1/client_poll.c socket1/comm.c socket1/comm.h)
 
 if(MSVC)
     # Suppress warnings for "unsafe" C functions (e.g., sprintf, strcpy) in MSVC.
