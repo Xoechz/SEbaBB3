@@ -8,49 +8,56 @@ const circleButton = document.getElementById('circle');
 const clearButton = document.getElementById('clear');
 const saveButton = document.getElementById('save');
 
-let color = 'black';
-let lineWidth = 1;
 let drawingActive = false;
 
-const currentShape = {
-    rectangle: false,
-    circle: false,
-    line: false
+const ShapeType = {
+    RECTANGLE: 'rectangle',
+    CIRCLE: 'circle',
+    LINE: 'line'
 }
+
+let currentShape = ShapeType.RECTANGLE;
 
 const drawing = new Drawing(canvas);
 
 rectButton.addEventListener('click', () => {
-    currentShape.rectangle = true;
-    currentShape.circle = false;
-    currentShape.line = false;
+    currentShape = ShapeType.RECTANGLE;
 
     rectButton.className = 'selected';
     circleButton.className = '';
     lineButton.className = '';
+
+    doneDrawing();
 });
 
 circleButton.addEventListener('click', () => {
-    currentShape.rectangle = false;
-    currentShape.circle = true;
-    currentShape.line = false;
+    currentShape = ShapeType.CIRCLE;
 
     rectButton.className = '';
     circleButton.className = 'selected';
     lineButton.className = '';
+
+    doneDrawing();
 });
 
 lineButton.addEventListener('click', () => {
-    currentShape.rectangle = false;
-    currentShape.circle = false;
-    currentShape.line = true;
+    currentShape = ShapeType.LINE;
 
     rectButton.className = '';
     circleButton.className = '';
     lineButton.className = 'selected';
+
+    doneDrawing();
 });
 
-canvas.addEventListener('mousedown', (e) => startDrawing(e));
+canvas.addEventListener('mousedown', (e) => {
+    if (drawingActive) {
+        draw(e);
+    }
+    else {
+        startDrawing(e);
+    }
+});
 
 function getMousePos(e) {
     const rect = canvas.getBoundingClientRect();
@@ -65,20 +72,37 @@ function startDrawing(e) {
 
     let shape;
 
-    color = colorInput.value;
-    lineWidth = lineWidthInput.value;
+    let color = colorInput.value;
+    let lineWidth = lineWidthInput.value;
 
-    if (currentShape.rectangle) {
+    if (currentShape === ShapeType.RECTANGLE) {
         shape = new Rectangle(x, y, 100, 100, color, lineWidth);
     }
-    else if (currentShape.circle) {
-        shape = new Circle(x, y, 0, color, lineWidth);
+    else if (currentShape === ShapeType.CIRCLE) {
+        shape = new Circle(x, y, 100, color, lineWidth);
     }
-    else if (currentShape.line) {
+    else if (currentShape === ShapeType.LINE) {
         shape = new Line(x, y, color, lineWidth);
+        drawingActive = true;
     }
 
     if (shape) {
         drawing.addShape(shape);
     }
+}
+
+function doneDrawing() {
+    drawingActive = false;
+}
+
+function draw(e) {
+    if (!drawingActive) {
+        return;
+    }
+
+    let { x, y } = getMousePos(e);
+
+    let shape = drawing.getLastShape();
+
+    shape.draw(drawing.ctx, x, y);
 }

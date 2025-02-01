@@ -50,19 +50,16 @@ class Line extends Shape {
     }
 
     draw(ctx, cx, cy) {
+        console.log(cx, cy);
+        console.log(this.points);
+
         if (cx === undefined || cy === undefined) {
             ctx.beginPath();
             ctx.moveTo(this.posX, this.posY);
             this.points.forEach(point => ctx.lineTo(point.x, point.y));
         }
         else {
-            if (this.points.length === 0) {
-                ctx.beginPath();
-                ctx.moveTo(cx, cy);
-            }
-            else {
-                ctx.lineTo(cx, cy);
-            }
+            ctx.lineTo(cx, cy);
             this.points.push({ x: cx, y: cy });
             ctx.lineWidth = this.lineWidth;
             ctx.strokeStyle = this.color;
@@ -80,9 +77,7 @@ class Drawing {
 
     addShape(shape) {
         this.shapeList.push(shape);
-        if (shape.__shapeType != 'line') {
-            shape.draw(this.ctx);
-        }
+        shape.draw(this.ctx);
     }
 
     draw() {
