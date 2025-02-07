@@ -46,3 +46,52 @@ typedef        /*0      1*/
 ```
 
 011 != 11 da 0 vorne octalzahl heißt. Hexadezimal = 0x...
+
+## Klausurinfos
+
+90 Minuten keine Unterlagen
+
+Tipp: Bleistift, Radierer und Textmarker(Also lange Angaben)
+
+Noten werden an Durchschnittliche Punkte angepasst. 12/24 reichen aber fix für einen 4er.
+
+Aufgaben wie bei Kurztest. C und C++ Aufgaben.
+
+24 Punkte, circa so aufgeteilt:
+
+### C - ca. 8 Punkte
+
+Nicht alles aus Standardbibliothek.
+
+- Felder
+- Zeiger
+- malloc, free
+- string funktionen(strcpy, strncpy, strcmp...)
+
+### C++ - ca. 16 Punkte
+
+- Klasse String
+- OOP
+  - Vererbung
+- Kein Backtracking oder Optimierung
+- Keine Minilib
+- Keine Generische Programmierung
+
+### Theorie - 2-4 Punkte
+
+Vielleicht ein paar Verständnisfragen. z.B. Namespaces
+
+Keine Namespaces oder Includes gebraucht.
+
+Vector erlaubt, falls man ihn braucht.
+
+Keine extra Zettel gebraucht
+
+RTTI als Theoriefrage
+
+Iteratoren nicht, Lambdas erlaubt aber nicht gefragt wahrscheinlich
+
+### Beispiel
+
+C Datentyp für einfach verkettete Liste existiert.
+Funktion für Umwandlungen zwischen Array und Liste gefragt.
